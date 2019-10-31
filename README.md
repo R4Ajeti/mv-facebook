@@ -61,7 +61,7 @@ For more information, see the
 * iii. gem update |cmd command|
 * iv. gem install sqlite3 -v 1.4.1 (or higher) |cmd command|
 * v. npm install -g yarn (install nodejs if not installed) |cmd command|
-Done!
+Done!!
 
 ### Testing app on rails
 * i. cd 'directory path'
