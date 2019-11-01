@@ -15,4 +15,34 @@ ActiveRecord::Schema.define(version: 0) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "Comment", primary_key: "ID", id: :integer, default: nil, force: :cascade do |t|
+    t.integer "User_ID"
+    t.integer "Post_ID"
+    t.string "Text", limit: 200
+  end
+
+  create_table "Friend", primary_key: "ID", id: :integer, default: nil, force: :cascade do |t|
+    t.integer "User_ID"
+    t.integer "Friend_ID"
+    t.string "Status", limit: 10
+  end
+
+  create_table "Like", primary_key: "ID", id: :integer, default: nil, force: :cascade do |t|
+    t.integer "User_ID"
+    t.integer "Post_ID"
+  end
+
+  create_table "Post", primary_key: "ID", id: :integer, default: nil, force: :cascade do |t|
+    t.integer "User_ID"
+    t.string "Title", limit: 15
+    t.string "Description", limit: 500
+  end
+
+  create_table "User", primary_key: "ID", id: :integer, default: nil, force: :cascade do |t|
+    t.string "Username", limit: 10
+    t.string "Email", limit: 25
+    t.string "Password", limit: 25
+    t.string "ImageLink", limit: 100
+  end
+
 end
