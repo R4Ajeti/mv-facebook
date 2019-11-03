@@ -17,11 +17,11 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: ec2-174-129-252-252.compute-1.amazonaws.com
-  database: d5hqq7v15btb0k
-  username: wekruuhmlrculc
+  host: localhost
+  database: db-facebook
+  username: fb
   port: 5432
-  password: ccc5a83005deacae2a7906194fb8840efaf50d75b8d0426624f69894de4e11a3
+  password: fbpass
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
