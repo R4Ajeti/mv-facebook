@@ -1,2 +1,14 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<h1>New post</h1>                                                                                                                                                      
+<% provide(:title, 'New post') %>                                                                                                                                      
+<div class="row">                                                                                                                                                       
+  <div class="col-md-6 col-md-offset-3">                                                                                                                                
+    <%= form_for(@post, url: posts_path) do |f| %>                                                                                                                    
+      <%= f.label :title %>                                                                                                                                             
+      <%= f.text_field :title, class: 'form-control' %>                                                                                                                 
+
+      <%= f.label :description %>                                                                                                                                       
+      <%= f.text_area :description, class: 'form-control' %>                                                                                                            
+      <%= f.submit "Create new post", class: "btn btn-primary" %>                                                                                                      
+    <% end %>                                                                                                                                                           
+  </div>                                                                                                                                                                
+</div>  

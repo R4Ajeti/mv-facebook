@@ -1,2 +1,1 @@
-module FriendsHelper
-end
+module FriendsHelper; end

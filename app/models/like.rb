@@ -1,2 +1,1 @@
-class Like < ApplicationRecord
-end
+class Like < ApplicationRecord; end

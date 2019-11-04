@@ -1,2 +1,1 @@
-class Friend < ApplicationRecord
-end
+class Friend < ApplicationRecord; end
