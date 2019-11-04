@@ -3,21 +3,12 @@
 # https://guides.rubyonrails.org/routing.html
 
 Rails.application.routes.draw do
+  devise_for :users
   # root
   root 'posts#index' # Show all events
 
-  # signup
-  get '/signup', to: 'users#new'
-  post '/signup', to: 'users#create'
-
-  # login
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
-  resources :sessions
-
   # users
-  resources :users
+  get '/users/:id', to: 'users#show'
 
   # posts
   get '/posts', to: 'posts#index'
@@ -26,12 +17,12 @@ Rails.application.routes.draw do
   resources :posts
 
   # likes
-  resources :users
+  # resources :users
 
   # comments
-  resources :users
+  # resources :users
 
   # friends
-  resources :users
+  # resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
