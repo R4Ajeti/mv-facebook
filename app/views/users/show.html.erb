@@ -1,2 +1,30 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <% if @events.any? %>
+      <h3>Created Events (<%= @events.count %>)</h3>
+      <ol class="events">
+        <%= render @events %>
+      </ol>
+    <% end %>
+    <% if @prev_events.any? %>
+      <h3>Previous Attended Events (<%= @prev_events.count %>)</h3>
+      <ol class="events">
+        <%= render @prev_events %>
+      </ol>
+    <% end %>
+    <% if @upcoming_events.any? %>
+      <h3>Up-comming Attended Events (<%= @upcoming_events.count %>)</h3>
+      <ol class="events">
+        <%= render @upcoming_events %>
+      </ol>
+    <% end %>
+  </div>
