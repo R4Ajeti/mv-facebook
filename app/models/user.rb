@@ -9,7 +9,6 @@ class User < ApplicationRecord
          :rememberable,
          :validatable
 
-  validates :name, presence: true
   validates :email, presence: true
   has_many :created_posts, foreign_key: :user_id, class_name: 'Post'
 end

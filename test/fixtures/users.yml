@@ -1,9 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: NameFirst
   image_link: MyString
+  email:  EmailFirst
 
 two:
-  name: MyString
+  name: NameSecond
   image_link: MyString
+  email:  EmailSecond
+
+test1:
+  email: 'test1@example.com'
+  encrypted_password: <%= Devise::Encryptor.digest(User, "password") %>
+  created_at: <%= Time.now - 6.minutes %>
+  updated_at: <%= Time.now - 4.minutes %>
