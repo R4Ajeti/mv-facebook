@@ -5,11 +5,11 @@ require 'test_helper'
 class PostTest < ActiveSupport::TestCase
   def setup
     @user = users(:one)
-    @post = 
+    @post =
       Post.new(
-        title: "Title",
+        title: 'Title',
         user_id: @user.id,
-        description: "My description here"
+        description: 'My description here'
       )
   end
 

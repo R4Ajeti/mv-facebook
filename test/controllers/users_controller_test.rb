@@ -7,7 +7,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   #   get users_new_url
   #   assert_response :success
   # end
-  
+
   # test 'should get create' do
   #   get users_create_url
   #   assert_response :success
@@ -24,7 +24,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get edit' do
-    get edit_user_registration_path 
+    get edit_user_registration_path
     follow_redirect!
     assert_response :success
   end

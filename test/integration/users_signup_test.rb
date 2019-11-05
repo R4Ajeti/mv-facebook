@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class UsersSignupTest < ActionDispatch::IntegrationTest
@@ -5,8 +7,8 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     get new_user_registration_path
     assert_difference 'User.count', 1 do
       post '/users', params: { user: { email: 'user@example.com',
-                               password: 'justpassword',
-                               password_confirmation: 'justpassword' } }
+                                       password: 'justpassword',
+                                       password_confirmation: 'justpassword' } }
     end
     follow_redirect!
     assert_template 'posts/index'
