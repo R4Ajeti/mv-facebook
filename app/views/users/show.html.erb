@@ -9,5 +9,13 @@
     </section>
   </aside>
   <div class="col-md-8">
-    Friends
-  </div>
+    <ul class="list-unstyled">
+      <% @posts.each do |post| %>
+        <li class="media">
+          <div class="media-body">
+            <h3 class="mt-0"><%= post.title %></h3>
+            <p><%= post.description %></p>   
+        </li>
+      <% end %>  
+    </ul>
+          </div>
