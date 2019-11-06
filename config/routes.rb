@@ -18,12 +18,12 @@ Rails.application.routes.draw do
   resources :posts
 
   # likes
-  get '/posts/:id/likes/new', to: 'likes#create'
+  get '/posts/:id/likes/new', to: 'likes#create', as: :like
   # resources :users
 
   # comments
   get '/posts/:id/comments/new', to: 'comments#new'
-  post '/posts/:id/comments/create', to: 'comments#create'
+  post '/posts/:id/comments/create', to: 'comments#create', as: :comment
   # resources :users
 
   # friends

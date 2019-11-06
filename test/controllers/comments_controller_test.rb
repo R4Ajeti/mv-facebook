@@ -3,18 +3,20 @@
 require 'test_helper'
 
 class CommentsControllerTest < ActionDispatch::IntegrationTest
-  # test 'should get new' do
-  #   get comments_new_url
-  #   assert_response :success
-  # end
+  def setup
+    @user = users(:one)
+    @post = posts(:one)
+    @comment =
+      Comment.new(
+        user_id: @user.id,
+        post_id: @post.id,
+        text: '123'
+      )
+  end
 
-  # test 'should get create' do
-  #   get comments_create_url
-  #   assert_response :success
-  # end
-
-  # test 'should get show' do
-  #   get comments_show_url
-  #   assert_response :success
-  # end
+  test 'should get login' do
+    post comment_path(@post.id)
+    follow_redirect!
+    assert_response :success
+  end
 end

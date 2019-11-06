@@ -18,7 +18,6 @@ class LikesController < ApplicationController
     else
       flash[:warning] = 'New like not added!'
     end
-    puts 'WORKS'
     redirect_to root_path
   end
 end
