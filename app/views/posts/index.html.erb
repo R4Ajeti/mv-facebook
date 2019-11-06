@@ -1,9 +1,30 @@
 <h1>All posts</h1>
+<ul class="list-unstyled">
+  <% @posts.each do |post| %>
+    <li class="media">
+      <%= link_to gravatar_for(post.user), "/" %>
+      <div class="media-body">
+        <p class="mt-0"><%= post.user.email %></p>
+        <h3 class="mt-0"><%= post.title %></h3>
+        <p><%= post.description %></p>   
+        <button class="btn btn-primary" ><%= link_to "Like", post %></button>
+        <span>10 Likes</span>
+        <button class="btn btn-primary" ><%= link_to "Comment", post %></button>
+        <span>2 Comments</span>
+        <h4 class="mt-0">Comments</h4>
+        <ul class="list-unstyled">
+            <li class="media">
+              <div class="media-body">
+                <strong class="mt-0">User 1</strong>
+                <p>Comment 1</p>   
+            </li>
+            <li class="media">
+              <div class="media-body">
+                <strong class="mt-0">User 2</strong>
+                <p>Comment 2</p>   
+            </li>
+        </ul>
+    </li>
 
-<% @posts.each do |post| %>
-  <div>                                                                                                                                               
-    <h3><%= post.title %></h3>    
-    <p><%= post.description %></p>   
-    <li><%= link_to "Show Post", post %></li>
-  </div>  
-<% end %>  
+  <% end %>  
+</ul>

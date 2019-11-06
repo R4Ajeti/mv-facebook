@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   # users
   get '/users/:id', to: 'users#show'
+  get '/users', to: 'users#index'
 
   # posts
   get '/posts', to: 'posts#index'
