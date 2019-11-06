@@ -10,8 +10,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                        password: 'justpassword',
                                        password_confirmation: 'justpassword' } }
     end
-    follow_redirect!
-    assert_template 'posts/index'
     assert :user_signed_in?
   end
 end

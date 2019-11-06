@@ -12,10 +12,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_equal 200, status
     @david = User.create(email: 'david@mail.com', password: Devise::Encryptor.digest(User, 'helloworld'))
     post new_user_session_path, params: { user: { email: @david.email, password: @david.password } }
-    # post new_user_session_path 'user[email]' => @david.email, 'user[password]' =>  @david.password
-    follow_redirect!
-    assert_equal 200, status
-    assert_equal '/', path
+    assert :user_signed_in?
   end
 
   test 'user is redirected to sign in page when visiting home page' do
