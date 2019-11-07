@@ -1,22 +1,14 @@
 # frozen_string_literal: true
 
-# https://semaphoreci.com/community/tutorials/how-to-test-rails-models-with-rspec
+# https://relishapp.com/rspec/rspec-rails/docs/controller-specs
 
 require 'rails_helper'
 
-RSpec.describe User, type: :model do
-  it 'is valid with valid attributes' do
-    @user = User.new(email: 'david@mail.com', password: Devise::Encryptor.digest(User, 'helloworld'))
-    expect(@user).to be_valid
-  end
-
-  it 'is not valid without a email' do
-    @user = User.new(email: '', password: Devise::Encryptor.digest(User, 'helloworld'))
-    expect(@user).to_not be_valid
-  end
-
-  it 'is not valid without a password' do
-    @user = User.new(email: 'david@mail.com', password: '')
-    expect(@user).to_not be_valid
+RSpec.describe UsersController, type: :controller do
+  describe 'GET index' do
+    it 'should be redirected' do
+      get :index
+      expect(response).to be_redirect
+    end
   end
 end
