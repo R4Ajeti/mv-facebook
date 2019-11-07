@@ -1,0 +1,12 @@
+<h1>All users</h1>
+<ul class="list-unstyled">
+  <% @users.each do |user| %>
+    <li class="media">
+      <%= link_to gravatar_for(user), "/" %>
+      <div class="media-body">
+        <p class="mt-0"><%= user.email %></p>
+        <button class="btn btn-primary" ><%= link_to "Friend Request", "/users/#{user.id}"  %></button>
+    </li>
+
+  <% end %>  
+</ul>
