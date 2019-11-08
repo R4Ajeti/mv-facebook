@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   it 'is valid with valid attributes' do
-    @user = User.create(email: 'david@mail.com', password: Devise::Encryptor.digest(User, 'helloworld'))
+    @user = User.create(email: 'david3333@mail.com', password: Devise::Encryptor.digest(User, 'helloworld'))
     @post =
       Post.new(
         title: 'Title',

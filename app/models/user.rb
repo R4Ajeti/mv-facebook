@@ -15,4 +15,9 @@ class User < ApplicationRecord
   has_many :liked_posts, through: :likes, source: :post
   has_many :comments, foreign_key: :user_id
   has_many :commented_posts, through: :comments, source: :post
+
+  has_many :requested_friendships, foreign_key: :user_id, class_name: 'Friendship'
+  has_many :received_friendships, foreign_key: :friend_id, class_name: 'Friendship'
+  has_many :requested_friends, through: :requested_friendships, source: :friend
+  has_many :received_friends, through: :received_friendships, source: :user
 end

@@ -12,6 +12,6 @@ RSpec.feature 'User login', type: :feature do
 
   scenario 'Visit profile after login' do
     visit "/users/#{@david.id}"
-    expect(page).to have_text('Friends')
+    expect(page).to have_text('New Post')
   end
 end
