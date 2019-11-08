@@ -1,0 +1,12 @@
+<h1>All requests</h1>
+<ul class="list-unstyled">
+  <% @friendships.each do |friendship| %>
+    <li class="media">
+      <%= link_to gravatar_for(friendship.user), "/" %>
+      <div class="media-body">
+        <p class="mt-0"><%= friendship.user.email %></p>
+        <button class="btn btn-primary" ><%= link_to "Accept Request", "/friendships/#{friendship.id}/update"  %></button>
+    </li>
+
+  <% end %>  
+</ul>

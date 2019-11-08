@@ -25,7 +25,11 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    requested = current_user.requested_friendships.select(&:confirmed).map(&:friend_id)
+    received = current_user.received_friendships.select(&:confirmed).map(&:user_id)
+    @posts = Post.all.select do |post|
+      requested.include?(post.user.id) || received.include?(post.user.id) || post.user.id == current_user.id
+    end
   end
 
   def user_params
