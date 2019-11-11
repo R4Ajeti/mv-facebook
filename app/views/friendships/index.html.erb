@@ -5,7 +5,7 @@
       <%= link_to gravatar_for(friendship.user), "/" %>
       <div class="media-body">
         <p class="mt-0"><%= friendship.user.email %></p>
-        <button class="btn btn-primary" ><%= link_to "Accept Request", "/friendships/#{friendship.id}/update"  %></button>
+        <button class="btn btn-primary" ><%= link_to "Accept Request", "/friendships/#{friendship.user.id}"  %></button>
     </li>
 
   <% end %>  
