@@ -38,4 +38,15 @@ RSpec.describe Friendship, type: :model do
       )
     expect(@friendship).to_not be_valid
   end
+  it 'is not valid without a confirmed' do
+    @user = User.create(email: 'david44444@mail.com', password: Devise::Encryptor.digest(User, 'helloworld'))
+    @friend = User.create(email: 'david44445@mail.com', password: Devise::Encryptor.digest(User, 'helloworld'))
+    @friendship =
+      Friendship.new(
+        confirmed: nil,
+        user_id: @user.id,
+        friend_id: @friend.id
+      )
+    expect(@friendship).to_not be_valid
+  end
 end
