@@ -13,5 +13,8 @@ class UsersController < ApplicationController
     @users = User.all.select do |user|
       !requested.include?(user.id) && !received.include?(user.id) && user.id != current_user.id
     end
+    @friends = User.all.select do |user|
+      requested.include?(user.id) && received.include?(user.id) && user.id != current_user.id
+    end
   end
 end
