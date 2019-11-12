@@ -30,8 +30,5 @@ Rails.application.routes.draw do
 
   # friendships
   get '/friendships', to: 'friendships#index'
-  get '/friendships/:id/create', to: 'friendships#create', as: :request
-  get '/friendships/:id/update', to: 'friendships#update', as: :receive
-  # resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/friendships/:id', to: 'friendships#create'
 end

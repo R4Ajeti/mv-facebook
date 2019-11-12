@@ -6,7 +6,7 @@
         <% @n = current_user && current_user.received_friendships.select {|f| !f.confirmed} %>
         <% if user_signed_in? %>
           <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Notifications ( #{@n.count} ) ", friendships_path %></li>
+          <li><%= link_to "Notifications ( #{requests(current_user).count} ) ", friendships_path %></li>
           <li><%= link_to "Users", users_path %></li>
           <li><%= link_to "New Post", posts_new_path %></li>
         <% end %>                                                                                                                                                       
