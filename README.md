@@ -3,6 +3,10 @@
 
 #### [Assignment link](https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project)
 
+# Deployed project (Heroku) 
+
+#### [Live view in broswer](https://desolate-refuge-57527.herokuapp.com)     
+
 
 # Language
 
