@@ -1,0 +1,28 @@
+<% if @users.length > 0 %>
+  <h1>Can be Friends</h1>
+  <ul class="list-unstyled">
+    <% @users.each do |user| %>
+      <li class="media">
+        <%= link_to gravatar_for(user), "/" %>
+        <div class="media-body">
+          <p class="mt-0"><%= user.email %></p>
+          <button class="btn btn-primary" ><%= link_to "Friend Request", "/friendships/#{user.id}"  %></button>
+      </li>
+
+    <% end %>  
+  </ul>
+<% end %>  
+<% if @friends.length > 0 %>
+  <h1>Already Friends</h1>
+  <ul class="list-unstyled">
+    <% @friends.length > 0 && @friends.each do |user| %>
+      <li class="media">
+        <%= link_to gravatar_for(user), "/" %>
+        <div class="media-body">
+          <p class="mt-0"><%= user.email %></p>
+          <button class="btn btn-primary" ><%= link_to "Friend Request", "/friendships/#{user.id}"  %></button>
+      </li>
+
+    <% end %>  
+  </ul>
+<% end %>  

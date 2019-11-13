@@ -1,0 +1,13 @@
+<% provide(:title, 'New comment') %>                                                                                                                                      
+<h1>New comment to post: "<%= @comment.post.title %>" </h1>                                                                                                                                                      
+
+<div class="row">                                                                                                                                                       
+  <div class="col-md-6 col-md-offset-3">                                                                                                                                
+    <%= form_for(@comment, url: "/posts/#{@comment.post.id}/comments/create") do |f| %>                                                                                                                    
+
+      <%= f.label :text %>                                                                                                                                             
+      <%= f.text_field :text, class: 'form-control' %>                                                                                                                 
+      <%= f.submit "Create new comment", class: "btn btn-primary" %>                                                                                                      
+    <% end %>                                                                                                                                                           
+  </div>                                                                                                                                                                
+</div>  

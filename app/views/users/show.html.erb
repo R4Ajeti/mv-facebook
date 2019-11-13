@@ -1,0 +1,21 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.email %>
+      </h1>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <ul class="list-unstyled">
+      <% @posts.each do |post| %>
+        <li class="media">
+          <div class="media-body">
+            <h3 class="mt-0"><%= post.title %></h3>
+            <p><%= post.description %></p>   
+        </li>
+      <% end %>  
+    </ul>
+          </div>
