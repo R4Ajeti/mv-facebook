@@ -9,4 +9,8 @@ RSpec.describe 'Visit signup page', type: :feature do
     expect(page).to have_content('Password')
     expect(page).to have_content('Password confirmation')
   end
+  scenario 'Signup with Facebook' do
+    visit new_user_registration_path
+    expect(page).to have_content('Sign in with Facebook')
+  end
 end
