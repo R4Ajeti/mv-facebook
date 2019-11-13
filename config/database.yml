@@ -81,3 +81,5 @@ test:
 production:
   <<: *default
   database: mv-facebook_production
+  username: fb
+  password: fbpass
