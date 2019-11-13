@@ -5,7 +5,7 @@
 Rails.application.routes.draw do
   get 'friendships/new'
   get 'friendships/create'
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   # root
   root 'posts#index' # Show all events
 
